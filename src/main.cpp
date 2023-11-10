@@ -4,10 +4,10 @@
 #include <DallasTemperature.h>
 
 // HX711 circuit wiring
-const int LOADCELL_DOUT_PIN = 15;
+const int LOADCELL_DOUT_PIN = 17;
 const int LOADCELL_SCK_PIN = 16;
 
-const int ONE_WIRE_BUS = 17; // Pin para o sensor DS18B20
+const int ONE_WIRE_BUS = 15; // Pin para o sensor DS18B20
 
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
