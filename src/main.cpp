@@ -18,11 +18,13 @@ void setup() {
   Serial.begin(57600);
   scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
   sensors.begin();
+  scale.tare(10);
+  scale.set_scale(383);
 }
 
 void loop() {
   if (scale.is_ready()) {
-    long reading = scale.read();
+    long reading = scale.get_units(10);
     Serial.print("HX711 reading: ");
     Serial.println(reading);
   } else {
